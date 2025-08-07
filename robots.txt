@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://seizeenergy.com/sitemap.xml
+
+# Disallow crawling of any admin or private directories (future-proofing)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+
+# Allow crawling of all main content
+Allow: /index.html
+Allow: /about.html
+Allow: /products.html
+Allow: /faq.html
+Allow: /contact.html
+Allow: /socials.html
+Allow: /styles.css
+Allow: /script.js
+
+# Crawl delay (optional - helps with server load)
+Crawl-delay: 1

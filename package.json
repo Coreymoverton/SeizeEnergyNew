@@ -1,0 +1,47 @@
+{
+  "name": "seize-energy-website",
+  "version": "1.0.0",
+  "description": "SEIZE Energy tropical energy drinks website - modern, responsive design with vibrant tropical themes",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000 --bind 0.0.0.0",
+    "start": "python3 -m http.server 8000 --bind 0.0.0.0",
+    "serve": "./start-server.sh",
+    "build": "echo 'Static site - no build process needed'",
+    "test": "echo 'No tests specified'",
+    "validate-html": "echo 'HTML validation would go here'",
+    "optimize-images": "echo 'Image optimization would go here'",
+    "deploy": "echo 'Deploy to hosting provider'"
+  },
+  "keywords": [
+    "energy-drink",
+    "tropical",
+    "website",
+    "static-site",
+    "seize-energy",
+    "pineapple-guava",
+    "orange-dragonfruit",
+    "natural-caffeine",
+    "zero-sugar"
+  ],
+  "author": "Corey Overton",
+  "license": "MIT",
+  "homepage": "https://seizeenergy.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coreymoverton/SeizeEnergyNew.git"
+  },
+  "bugs": {
+    "url": "https://github.com/coreymoverton/SeizeEnergyNew/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "iOS >= 10",
+    "Safari >= 10"
+  ]
+}

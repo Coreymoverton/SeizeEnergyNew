@@ -2666,3 +2666,525 @@ body {
         border-radius: 5px;
     }
 }
+
+/* =============================================
+   NEW ENHANCED FEATURES CSS 
+   ============================================= */
+
+/* Enhanced Nutrition Section */
+.nutrition-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1a2e 100%);
+}
+
+.nutrition-section h2 {
+    text-align: center;
+    color: var(--light-text);
+    margin-bottom: 3rem;
+}
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.nutrition-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nutrition-card h3 {
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.nutrition-facts {
+    margin-top: 1.5rem;
+}
+
+.nutrition-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gray-text);
+}
+
+.nutrition-item.highlight {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.nutrition-item .value {
+    font-weight: 600;
+    color: var(--light-text);
+}
+
+.nutrition-benefits {
+    padding: 2rem;
+}
+
+.nutrition-benefits h3 {
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+}
+
+.nutrition-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nutrition-benefits li {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--gray-text);
+    line-height: 1.6;
+}
+
+.nutrition-benefits li:before {
+    content: '⚡';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+/* Enhanced Buy Section */
+.buy-section {
+    padding: 80px 0;
+    background: var(--dark-bg);
+}
+
+.buy-section h2 {
+    text-align: center;
+    color: var(--light-text);
+    margin-bottom: 3rem;
+}
+
+.retailers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.retailer-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.retailer-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.retailer-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.retailer-card h3 {
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+.retailer-card p {
+    color: var(--gray-text);
+    line-height: 1.6;
+}
+
+.store-locator {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Enhanced Platform Cards for Social Media */
+.platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.platform-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.platform-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.platform-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.platform-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+}
+
+/* Platform-specific colors */
+.instagram-card .platform-icon {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+}
+
+.tiktok-card .platform-icon {
+    background: #000000;
+}
+
+.twitter-card .platform-icon {
+    background: #1DA1F2;
+}
+
+.facebook-card .platform-icon {
+    background: #4267B2;
+}
+
+.youtube-card .platform-icon {
+    background: #FF0000;
+}
+
+.linkedin-card .platform-icon {
+    background: #0077B5;
+}
+
+.platform-info h3 {
+    color: var(--light-text);
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.platform-info p {
+    color: var(--gray-text);
+    margin-bottom: 0.5rem;
+}
+
+.follower-count {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.platform-content {
+    margin-bottom: 1.5rem;
+}
+
+.platform-content p {
+    color: var(--gray-text);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.platform-stats {
+    display: flex;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    color: var(--gray-text);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.platform-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Platform button specific colors */
+.instagram-btn {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+}
+
+.tiktok-btn {
+    background: #000000;
+}
+
+.twitter-btn {
+    background: #1DA1F2;
+}
+
+.facebook-btn {
+    background: #4267B2;
+}
+
+.youtube-btn {
+    background: #FF0000;
+}
+
+.linkedin-btn {
+    background: #0077B5;
+}
+
+.platform-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Community Features Enhanced */
+.community-features {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, var(--dark-bg) 100%);
+}
+
+.community-features h2 {
+    text-align: center;
+    color: var(--light-text);
+    margin-bottom: 3rem;
+}
+
+.community-features .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.community-features .feature-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.community-features .feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.community-features .feature-item .feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.community-features .feature-item h3 {
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+.community-features .feature-item p {
+    color: var(--gray-text);
+    line-height: 1.6;
+}
+
+/* Enhanced UGC Section */
+.ugc-section {
+    padding: 80px 0;
+    background: var(--dark-bg);
+}
+
+.ugc-section h2 {
+    text-align: center;
+    color: var(--light-text);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--gray-text);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ugc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.ugc-post {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.ugc-post:hover {
+    transform: translateY(-3px);
+}
+
+.ugc-image {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.ugc-content p {
+    color: var(--light-text);
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.ugc-author {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray-text);
+    font-size: 0.9rem;
+}
+
+/* Enhanced Social CTA */
+.social-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    text-align: center;
+}
+
+.social-cta .cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.social-cta h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.social-cta p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-cta .btn-primary {
+    background: white;
+    color: var(--primary-color);
+}
+
+.social-cta .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.social-cta .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsiveness for New Elements */
+@media screen and (max-width: 768px) {
+    .nutrition-grid,
+    .retailers-grid,
+    .community-features .features-grid,
+    .ugc-grid,
+    .platforms-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .platform-stats {
+        gap: 1rem;
+        justify-content: center;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-cta h2 {
+        font-size: 2rem;
+    }
+    
+    .platform-header {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nutrition-card,
+    .retailer-card,
+    .community-features .feature-item,
+    .ugc-post,
+    .platform-card {
+        padding: 1.5rem;
+    }
+    
+    .platform-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .platform-stats {
+        justify-content: center;
+    }
+    
+    .social-cta h2 {
+        font-size: 1.8rem;
+    }
+}

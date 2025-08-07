@@ -350,3 +350,175 @@ if (document.readyState === 'loading') {
 } else {
     applySafariMobileFixes();
 }
+
+// Enhanced FAQ Accordion Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = question.querySelector('i');
+        
+        if (question && answer && icon) {
+            question.addEventListener('click', () => {
+                const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+                
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherIcon = otherItem.querySelector('.faq-question i');
+                        if (otherAnswer && otherIcon) {
+                            otherAnswer.style.maxHeight = '0px';
+                            otherAnswer.style.padding = '0 1.5rem';
+                            otherIcon.className = 'fas fa-plus';
+                            otherItem.classList.remove('active');
+                        }
+                    }
+                });
+                
+                // Toggle current item
+                if (isOpen) {
+                    answer.style.maxHeight = '0px';
+                    answer.style.padding = '0 1.5rem';
+                    icon.className = 'fas fa-plus';
+                    item.classList.remove('active');
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    answer.style.padding = '1rem 1.5rem 1.5rem';
+                    icon.className = 'fas fa-minus';
+                    item.classList.add('active');
+                }
+            });
+            
+            // Initialize with closed state
+            answer.style.maxHeight = '0px';
+            answer.style.overflow = 'hidden';
+            answer.style.transition = 'all 0.3s ease';
+            answer.style.padding = '0 1.5rem';
+        }
+    });
+});
+
+// Enhanced Contact Form Handling
+function handleContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.firstName || !data.lastName || !data.email || !data.subject || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            submitButton.style.background = '#6B46C1';
+            
+            setTimeout(() => {
+                // Success message
+                const successMessage = document.createElement('div');
+                successMessage.style.cssText = `
+                    background: linear-gradient(45deg, #10B981, #6B46C1);
+                    color: white;
+                    padding: 1rem 2rem;
+                    border-radius: 10px;
+                    margin: 1rem 0;
+                    text-align: center;
+                    font-weight: 600;
+                    animation: fadeIn 0.3s ease;
+                `;
+                successMessage.textContent = 'Thank you for your message! We\'ll get back to you within 24 hours.';
+                
+                // Insert message before form
+                contactForm.parentNode.insertBefore(successMessage, contactForm);
+                
+                // Reset form
+                this.reset();
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                submitButton.style.background = '';
+                
+                // Remove success message after 5 seconds
+                setTimeout(() => {
+                    if (successMessage.parentNode) {
+                        successMessage.parentNode.removeChild(successMessage);
+                    }
+                }, 5000);
+                
+            }, 2000);
+        });
+    }
+}
+
+// Initialize contact form handling
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', handleContactForm);
+} else {
+    handleContactForm();
+}
+
+// Enhanced Platform Button Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    const platformBtns = document.querySelectorAll('.platform-btn');
+    
+    platformBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create a fun interaction
+            const originalText = this.textContent;
+            const platform = this.classList.contains('instagram-btn') ? 'Instagram' :
+                           this.classList.contains('tiktok-btn') ? 'TikTok' :
+                           this.classList.contains('twitter-btn') ? 'Twitter' :
+                           this.classList.contains('facebook-btn') ? 'Facebook' :
+                           this.classList.contains('youtube-btn') ? 'YouTube' :
+                           this.classList.contains('linkedin-btn') ? 'LinkedIn' : 'Social Media';
+            
+            this.textContent = 'Opening...';
+            this.style.transform = 'scale(0.95)';
+            
+            setTimeout(() => {
+                // In a real implementation, this would open the social media page
+                alert(`This would take you to SEIZE Energy's ${platform} page! 🚀\n\nIn production, this would link to the actual social media accounts.`);
+                
+                this.textContent = originalText;
+                this.style.transform = '';
+            }, 500);
+        });
+    });
+});
+
+// Add CSS animation keyframes
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .faq-item.active {
+        background: rgba(107, 70, 193, 0.1) !important;
+        border-color: rgba(107, 70, 193, 0.3) !important;
+    }
+`;
+document.head.appendChild(style);
