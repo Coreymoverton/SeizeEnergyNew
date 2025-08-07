@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+/* Smooth scrolling for all elements */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed navbar */
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;

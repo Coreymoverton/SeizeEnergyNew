@@ -13,7 +13,7 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
-// Smooth scrolling for anchor links
+// Enhanced smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -26,6 +26,103 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Make "Scroll to explore" button functional
+document.addEventListener('DOMContentLoaded', function() {
+    const heroScrollButton = document.querySelector('.hero-scroll');
+    
+    if (heroScrollButton) {
+        heroScrollButton.style.cursor = 'pointer';
+        
+        heroScrollButton.addEventListener('click', function() {
+            const featuresSection = document.querySelector('.features');
+            if (featuresSection) {
+                featuresSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+        
+        // Add hover effect
+        heroScrollButton.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(-50%) translateY(-5px)';
+            this.style.color = 'var(--primary-color)';
+        });
+        
+        heroScrollButton.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(-50%) translateY(0)';
+            this.style.color = 'var(--gray-text)';
+        });
+    }
+});
+
+// Enhanced scroll to top functionality
+function addScrollToTop() {
+    // Create scroll to top button
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+    scrollToTopBtn.className = 'scroll-to-top';
+    scrollToTopBtn.setAttribute('aria-label', 'Scroll to top');
+    
+    // Add styles
+    scrollToTopBtn.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(107, 70, 193, 0.3);
+    `;
+    
+    document.body.appendChild(scrollToTopBtn);
+    
+    // Show/hide button based on scroll position
+    function toggleScrollToTopBtn() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.style.opacity = '1';
+            scrollToTopBtn.style.visibility = 'visible';
+        } else {
+            scrollToTopBtn.style.opacity = '0';
+            scrollToTopBtn.style.visibility = 'hidden';
+        }
+    }
+    
+    // Scroll to top functionality
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Add hover effects
+    scrollToTopBtn.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-3px) scale(1.1)';
+        this.style.boxShadow = '0 6px 20px rgba(107, 70, 193, 0.4)';
+    });
+    
+    scrollToTopBtn.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+        this.style.boxShadow = '0 4px 15px rgba(107, 70, 193, 0.3)';
+    });
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', toggleScrollToTopBtn);
+    
+    // Initial check
+    toggleScrollToTopBtn();
+}
 
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
@@ -349,6 +446,13 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', applySafariMobileFixes);
 } else {
     applySafariMobileFixes();
+}
+
+// Initialize scroll to top functionality
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addScrollToTop);
+} else {
+    addScrollToTop();
 }
 
 // Enhanced FAQ Accordion Functionality
