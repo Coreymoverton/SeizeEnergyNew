@@ -125,7 +125,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 0 20px;
+    padding: 120px 20px 0; /* Increased top padding to ensure proper spacing below navbar */
     overflow: hidden;
 }
 
